@@ -1,14 +1,15 @@
-package com.phoebus.paymentserver.entity;
+package com.phoebus.paymentserver.entitys;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
 @Entity
 @Table(name = "acquirer_execute")
-public class AcquirerExecute {
+public class AcquirerExecute implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,14 +1,15 @@
-package com.phoebus.paymentserver.entity;
+package com.phoebus.paymentserver.entitys;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
 @Entity
 @Table(name = "equipment_data_config")
-public class EquipmentDataConfig {
+public class EquipmentDataConfig implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
