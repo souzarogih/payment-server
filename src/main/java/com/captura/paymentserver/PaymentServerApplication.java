@@ -1,4 +1,4 @@
-package com.phoebus.paymentserver;
+package com.captura.paymentserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
