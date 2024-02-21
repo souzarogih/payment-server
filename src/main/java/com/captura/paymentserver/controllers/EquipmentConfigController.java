@@ -1,10 +1,10 @@
-package com.phoebus.paymentserver.controllers;
+package com.captura.paymentserver.controllers;
 
-import com.phoebus.paymentserver.dtos.EquipmentConfigRequestDto;
+import com.captura.paymentserver.dtos.EquipmentConfigRequestDto;
 
-import com.phoebus.paymentserver.dtos.EquipmentConfigResponseDto;
-import com.phoebus.paymentserver.entitys.EquipmentConfig;
-import com.phoebus.paymentserver.services.EquipmentConfigService;
+import com.captura.paymentserver.dtos.EquipmentConfigResponseDto;
+import com.captura.paymentserver.entitys.EquipmentConfig;
+import com.captura.paymentserver.services.EquipmentConfigService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,7 +30,7 @@ public class EquipmentConfigController {
 
         EquipmentConfig equipmentConfigData = new EquipmentConfig();
         equipmentConfigData.setSerialNumber(equipmentConfigRequestDto.getSerialNumber());
-        equipmentConfigData.setCreateDate(LocalDateTime.now(ZoneId.of("UTC")));
+        equipmentConfigData.setEquipmentConfigCreateDate(LocalDateTime.now(ZoneId.of("UTC")));
         EquipmentConfig saveEquipmentObject = equipmentConfigService.saveEquipment(equipmentConfigData);
 
         EquipmentConfigResponseDto equipmentConfigResponseDto = new EquipmentConfigResponseDto();
@@ -75,9 +75,9 @@ public class EquipmentConfigController {
         if(equipmentConfigObject.isPresent()){
             EquipmentConfig equipmentConfigData = new EquipmentConfig();
             equipmentConfigData.setEquipmentConfigId(equipmentConfigObject.get().getEquipmentConfigId());
-            equipmentConfigData.setCreateDate(equipmentConfigObject.get().getCreateDate());
+            equipmentConfigData.setEquipmentConfigCreateDate(equipmentConfigObject.get().getEquipmentConfigCreateDate());
             equipmentConfigData.setSerialNumber(equipmentConfigRequestDto.getSerialNumber());
-            equipmentConfigData.setLastUpdate(LocalDateTime.now(ZoneId.of("UTC")));
+            equipmentConfigData.setEquipmentConfigLastUpdate(LocalDateTime.now(ZoneId.of("UTC")));
             EquipmentConfig saveEquipmentObject = equipmentConfigService.updateEquipmentSerialNumber(equipmentConfigData);
 
             EquipmentConfigResponseDto equipmentConfigResponseDto = new EquipmentConfigResponseDto();

@@ -1,5 +1,6 @@
-package com.phoebus.paymentserver.entitys;
+package com.captura.paymentserver.entitys;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,13 +14,18 @@ public class MerchantAcquirerConfig implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long merchant_acquirer_config_id;
+    private Long merchantAcquirerConfigId;
 
-    private String acquirer_config_id;
+    @OneToOne
+    @JoinColumn(name = "acquirerConfigId")
+    private AcquirerConfig acquirerConfigId;
 
     private String mid;
 
-    private LocalDateTime merchant_acquirer_config_create;
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @Column(nullable = false)
+    private LocalDateTime merchantAcquirerConfigCreate;
 
-    private LocalDateTime merchant_acquirer_config_last_update;
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    private LocalDateTime merchantAcquirerConfigLastUpdate;
 }

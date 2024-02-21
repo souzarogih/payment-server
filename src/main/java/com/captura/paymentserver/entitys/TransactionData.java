@@ -1,4 +1,4 @@
-package com.phoebus.paymentserver.entitys;
+package com.captura.paymentserver.entitys;
 
 import jakarta.persistence.*;
 import lombok.Data;

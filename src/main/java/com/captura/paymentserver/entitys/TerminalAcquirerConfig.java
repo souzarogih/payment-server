@@ -1,5 +1,6 @@
-package com.phoebus.paymentserver.entitys;
+package com.captura.paymentserver.entitys;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,11 +14,18 @@ public class TerminalAcquirerConfig implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long terminal_acquirer_config_id;
+    private Long terminalAcquirerConfigId;
 
     private String tid;
 
-    private String acquirer_config_id;
+    @OneToOne
+    @JoinColumn(name = "acquirerConfigId")
+    private AcquirerConfig acquirerConfigId;
 
-    private LocalDateTime terminal_acquirer_create;
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @Column(nullable = false)
+    private LocalDateTime terminalAcquirerCreate;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    private LocalDateTime terminalAcquirerLastUpdate;
 }

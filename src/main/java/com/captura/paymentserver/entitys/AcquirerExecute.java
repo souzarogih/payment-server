@@ -1,4 +1,4 @@
-package com.phoebus.paymentserver.entitys;
+package com.captura.paymentserver.entitys;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -14,14 +14,22 @@ public class AcquirerExecute implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long acquirer_execute_id;
-    private AcquirerConfig acquirer_config_id;
-    private Long last_acquirer_execute_id;
-    private String nsu_acquirer;
-    private String authorization_code;
-    private String response_code;
-    private String response_message;
 
-    private LocalDateTime acquirer_execute_create;
+    @Column(nullable = false)
+//    @OneToOne
+//    @JoinColumn(name = "acquirerConfigId")
+    private String acquirerConfigId;
 
-    private LocalDateTime acquirer_execute_last_update;
+    @Column(nullable = false)
+//    @OneToOne
+//    @JoinColumn(name = "acquirerConfigId")
+    private String lastAcquirerExecuteId;
+    private String nsuAcquirer;
+    private String authorizationCode;
+    private String responseCode;
+    private String responseMessage;
+
+    private LocalDateTime acquirerExecuteCreate;
+
+    private LocalDateTime acquirerExecuteLastUpdate;
 }

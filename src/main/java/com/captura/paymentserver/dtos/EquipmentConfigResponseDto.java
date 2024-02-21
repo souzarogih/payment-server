@@ -1,4 +1,4 @@
-package com.phoebus.paymentserver.dtos;
+package com.captura.paymentserver.dtos;
 
 import lombok.Data;
 
