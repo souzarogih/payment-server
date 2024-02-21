@@ -14,6 +14,7 @@ public class AcquirerRedeExecute implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long acquirer_rede_execute_id;
+
     private LocalDateTime acquirer_start_date;
     private LocalDateTime acquirer_finish_date;
 }

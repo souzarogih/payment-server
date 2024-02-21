@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class EquipmentConfigRequestDto {
 
-    private String serial_number;
+    private String serialNumber;
 }
