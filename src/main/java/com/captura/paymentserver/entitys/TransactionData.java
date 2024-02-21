@@ -1,5 +1,6 @@
 package com.captura.paymentserver.entitys;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,18 +14,24 @@ public class TransactionData implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long transaction_data_id;
+    private Long transactionDataId;
 
-    private Double transaction_value;
-    private String card_last_number;
-    private String card_first_number;
-    private LocalDateTime transaction_data_create;
-    private LocalDateTime transaction_data_last_update;
-    private String transaction_data_type;
+    private Double transactionValue;
+    private String cardLastNumber;
+    private String cardFirstNumber;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @Column(nullable = false)
+    private LocalDateTime transactionDataCreate;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    private LocalDateTime transactionDataLastUpdate;
+
+    private String transactionDataType;
     private Integer installments;
-    private String payment_type;
-    private String nsu_client;
-    private String last_nsu_client;
-    private String card_brand_id;
-    private String card_holder;
+    private String paymentType;
+    private String nsuClient;
+    private String lastNsuClient;
+//    private CardBrand cardBrandId;
+    private String cardHolder;
 }

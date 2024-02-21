@@ -1,5 +1,6 @@
 package com.captura.paymentserver.entitys;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,17 +17,37 @@ public class TransactionExecute implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long transaction_execute_id;
 
+    private Long last_transaction_execute_id;
+
     private AcquirerConfig acquirer_config_id;
     private TerminalConfig terminal_config_id;
     private TerminalAcquirerConfig terminal_acquirer_config_id;
     private MerchantConfig merchant_config_id;
     private MerchantAcquirerConfig merchant_acquirer_config_id;
-    private LocalDateTime  transaction_start;
-    private LocalDateTime transaction_finish;
-    private LocalDateTime  transaction_last_update;
-    private String transaction_execute_type;
     private TransactionData transaction_data_id;
-    private Long last_transaction_execute_id;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @Column(nullable = false)
+    private LocalDateTime  startTransactionExecute;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @Column
+    private LocalDateTime finishTransactionExecute;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @Column
+    private LocalDateTime  transactionLastUpdate;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @Column(nullable = false)
+    private LocalDateTime  transactionDate;
+
+    private String transaction_execute_type;
+
+//    @Column(nullable = false)
+//    private CapturaTransactionStatus capturaTransactionStatusId;
+    /*1-pendente 2-em andamento 3-concluida 4-confirmada 5-erro 6-cancelada*/
+
     private Long nsu_captura;
     private UUID payment_id;
 }

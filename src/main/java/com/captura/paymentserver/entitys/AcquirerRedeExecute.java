@@ -1,10 +1,12 @@
 package com.captura.paymentserver.entitys;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @Entity
@@ -13,8 +15,22 @@ public class AcquirerRedeExecute implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long acquirer_rede_execute_id;
+    private UUID acquirerRedeExecuteId;
 
-    private LocalDateTime acquirer_start_date;
-    private LocalDateTime acquirer_finish_date;
+    private String acquirerNsu;
+
+    private String acquirerAuthCode;
+
+    private String acquirerResponseMessage;
+
+    private String acquirerResponseCode;
+
+//    private AcquirerStatus acquirerStatusId;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    @Column(nullable = false)
+    private LocalDateTime acquirerStartDate;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
+    private LocalDateTime acquirerFinishDate;
 }
