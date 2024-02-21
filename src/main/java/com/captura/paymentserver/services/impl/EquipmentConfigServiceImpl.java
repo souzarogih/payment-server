@@ -1,8 +1,8 @@
-package com.phoebus.paymentserver.services.impl;
+package com.captura.paymentserver.services.impl;
 
-import com.phoebus.paymentserver.entitys.EquipmentConfig;
-import com.phoebus.paymentserver.repositories.EquipmentConfigRepository;
-import com.phoebus.paymentserver.services.EquipmentConfigService;
+import com.captura.paymentserver.entitys.EquipmentConfig;
+import com.captura.paymentserver.repositories.EquipmentConfigRepository;
+import com.captura.paymentserver.services.EquipmentConfigService;
 import jakarta.transaction.Transactional;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;

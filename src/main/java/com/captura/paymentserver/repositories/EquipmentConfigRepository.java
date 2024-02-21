@@ -1,6 +1,6 @@
-package com.phoebus.paymentserver.repositories;
+package com.captura.paymentserver.repositories;
 
-import com.phoebus.paymentserver.entitys.EquipmentConfig;
+import com.captura.paymentserver.entitys.EquipmentConfig;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

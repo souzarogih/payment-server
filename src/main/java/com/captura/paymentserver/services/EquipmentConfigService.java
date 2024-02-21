@@ -1,6 +1,6 @@
-package com.phoebus.paymentserver.services;
+package com.captura.paymentserver.services;
 
-import com.phoebus.paymentserver.entitys.EquipmentConfig;
+import com.captura.paymentserver.entitys.EquipmentConfig;
 
 import java.util.List;
 import java.util.Optional;

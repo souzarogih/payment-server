@@ -1,6 +1,6 @@
-package com.phoebus.paymentserver.repositories;
+package com.captura.paymentserver.repositories;
 
-import com.phoebus.paymentserver.entitys.TerminalAcquirerConfig;
+import com.captura.paymentserver.entitys.TerminalAcquirerConfig;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TerminalAcquirerConfigRepository extends JpaRepository<TerminalAcquirerConfig, Long> {
