@@ -7,7 +7,6 @@ import com.captura.paymentserver.services.AcquirerConfigService;
 import com.captura.paymentserver.services.MerchantAcquirerConfigService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -28,7 +27,6 @@ public class MerchantAcquirerConfigServiceImpl implements MerchantAcquirerConfig
         System.out.println("merchantAcquirerConfig: " + merchantAcquirerConfig);
 
         Optional<AcquirerConfig> acquirerConfig = acquirerConfigService.acquirerConfigConsult(merchantAcquirerConfig.getMerchantAcquirerName());
-//        System.out.println("acquirerConfig: " + acquirerConfig);
         if(acquirerConfig.isPresent()){
             log.info("Adquirente existente: {} - {}", acquirerConfig.get().getAcquirerConfigId(), acquirerConfig.get().getAcquirerName());
         }
