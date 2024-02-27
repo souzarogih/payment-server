@@ -1,6 +1,7 @@
 package com.captura.paymentserver.dtos;
 
 import com.captura.paymentserver.entitys.MerchantAcquirerConfig;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 

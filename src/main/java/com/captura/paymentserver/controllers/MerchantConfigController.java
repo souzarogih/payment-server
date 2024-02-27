@@ -59,9 +59,7 @@ public class MerchantConfigController {
         }else {
             log.debug("Requisição para cadastro do lojista com configurações da adquirente. {}", merchantConfig.getCompanyName());
 
-            //salvando MerchantAcquirerConfig
-            // service para cadastrar as configurações da merchantAcquirerConfig
-
+            //Salvando MerchantAcquirerConfig
             MerchantAcquirerConfig merchantAcquirerConfigRequest = new MerchantAcquirerConfig();
             merchantAcquirerConfigRequest.setMid(merchantConfig.getMid());
             merchantAcquirerConfigRequest.setMerchantAcquirerConfigCreate(LocalDateTime.now(ZoneId.of("UTC")));
@@ -73,7 +71,7 @@ public class MerchantConfigController {
                     merchantAcquirerConfigObject.getMerchantAcquirerConfigId(),
                     merchantAcquirerConfigObject.getMid());
 
-            //salvando MerchantConfig
+            //Salvando MerchantConfig
             merchantConfig.setMerchantAcquirerConfigId(merchantAcquirerConfigObject);
             merchantConfig.setMerchantConfigCode(UUID.randomUUID().toString());
             merchantConfig.setMerchantConfigCreate(LocalDateTime.now(ZoneId.of("UTC")));
