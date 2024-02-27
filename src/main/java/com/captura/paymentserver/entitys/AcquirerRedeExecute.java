@@ -15,7 +15,8 @@ public class AcquirerRedeExecute implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID acquirerRedeExecuteId;
+//    private UUID acquirerRedeExecuteId;
+    private Long acquirerRedeExecuteId;
 
     private String acquirerNsu;
 

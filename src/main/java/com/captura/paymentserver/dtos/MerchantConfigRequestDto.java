@@ -1,5 +1,6 @@
 package com.captura.paymentserver.dtos;
 
+import com.captura.paymentserver.entitys.MerchantAcquirerConfig;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -12,4 +13,10 @@ public class MerchantConfigRequestDto {
 
     @NotBlank(message = "Campo commercialName obrigatório.")
     private String commercialName;
+
+    private String merchantConfigCode;
+
+    private String mid;
+
+    private String merchantAcquirerName;
 }

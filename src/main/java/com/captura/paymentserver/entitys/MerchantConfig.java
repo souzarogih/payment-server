@@ -33,6 +33,10 @@ public class MerchantConfig implements Serializable {
     @Column(nullable = false, length = 40)
     private String commercialName;
 
+    private String mid;
+
+    private String merchantAcquirerName;
+
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
     @Column(nullable = false)
     private LocalDateTime merchantConfigCreate;

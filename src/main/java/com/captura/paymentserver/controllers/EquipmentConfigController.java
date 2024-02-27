@@ -91,4 +91,7 @@ public class EquipmentConfigController {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(equipmentConfigResponseDto);
         }
     }
+
+    //criar a inicialização de um terminal
+    //na inicialização, precisa criar uma nova tabela com dados extras sobre o dispositivo client
 }
