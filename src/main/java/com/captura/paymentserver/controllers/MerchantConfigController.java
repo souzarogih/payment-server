@@ -46,7 +46,6 @@ public class MerchantConfigController {
             MerchantConfig merchantConfigObject = merchantConfigService.merchantConfigCreate(merchantConfig);
             System.out.println("merchantConfigObject: "+merchantConfigObject);
 
-
             //Preparado a request de resposta
             merchantConfigResponseDto.setMerchantConfigId(merchantConfigObject.getMerchantConfigId());
 //            merchantConfigResponseDto.setMerchantAcquirerConfigId(merchantConfigObject.getMerchantAcquirerConfigId());
@@ -58,10 +57,12 @@ public class MerchantConfigController {
 
         }else {
             log.debug("Requisição para cadastro do lojista com configurações da adquirente. {}", merchantConfig.getCompanyName());
+            log.info(": {}", merchantConfig.getMerchantAcquirerName());
 
             //Salvando MerchantAcquirerConfig
             MerchantAcquirerConfig merchantAcquirerConfigRequest = new MerchantAcquirerConfig();
             merchantAcquirerConfigRequest.setMid(merchantConfig.getMid());
+            merchantAcquirerConfigRequest.setMerchantAcquirerName(merchantConfig.getMerchantAcquirerName());
             merchantAcquirerConfigRequest.setMerchantAcquirerConfigCreate(LocalDateTime.now(ZoneId.of("UTC")));
             MerchantAcquirerConfig merchantAcquirerConfigObject = merchantAcquirerConfigService.saveMerchantAcquirerConfig(merchantAcquirerConfigRequest);
             log.debug("Salvando dados da adquirente {} ao merchant {} - {} | merchant_acquirer_config_id: {} - MID: {}",
