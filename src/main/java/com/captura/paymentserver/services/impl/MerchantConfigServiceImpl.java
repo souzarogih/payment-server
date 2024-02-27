@@ -15,7 +15,7 @@ public class MerchantConfigServiceImpl implements MerchantConfigService {
     MerchantConfigRepository merchantConfigRepository;
 
     public MerchantConfig merchantConfigCreate(MerchantConfig merchantConfig) {
-        log.info("merchantConfigCreate");
+//        log.info("merchantConfigCreate");
 
         return merchantConfigRepository.save(merchantConfig);
     }
