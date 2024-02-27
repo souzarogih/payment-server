@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class MerchantAcquirerConfig implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long merchantAcquirerConfigId;
 
     @OneToOne

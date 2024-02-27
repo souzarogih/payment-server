@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class MerchantConfig implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long merchantConfigId;
 
     private String merchantConfigCode;
