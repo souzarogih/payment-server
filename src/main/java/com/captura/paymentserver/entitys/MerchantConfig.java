@@ -26,7 +26,7 @@ public class MerchantConfig implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long merchantConfigId;
+    private Long id;
 
     private String merchantConfigCode;
 
@@ -40,6 +40,7 @@ public class MerchantConfig implements Serializable {
     @Column(nullable = false, length = 40)
     private String commercialName;
 
+    @Transient
     private String mid;
 
     @Transient

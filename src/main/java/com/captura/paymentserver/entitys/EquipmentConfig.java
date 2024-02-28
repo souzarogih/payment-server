@@ -19,7 +19,7 @@ public class EquipmentConfig implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long equipmentConfigId;
+    private Long id;
 
     @Column(nullable = false, length = 30)
     private String serialNumber;

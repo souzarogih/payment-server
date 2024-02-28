@@ -6,7 +6,6 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Data
 @Entity
@@ -16,7 +15,7 @@ public class AcquirerRedeExecute implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 //    private UUID acquirerRedeExecuteId;
-    private Long acquirerRedeExecuteId;
+    private Long id;
 
     private String acquirerNsu;
 

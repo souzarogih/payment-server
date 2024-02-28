@@ -15,7 +15,7 @@ public class TransactionExecute implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long transaction_execute_id;
+    private Long id;
 
     private Long last_transaction_execute_id;
 

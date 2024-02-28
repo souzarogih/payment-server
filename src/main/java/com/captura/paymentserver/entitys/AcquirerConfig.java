@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -17,8 +18,11 @@ import java.time.LocalDateTime;
 public class AcquirerConfig implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long acquirerConfigId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @OneToMany(mappedBy = "acquirerConfig", fetch = FetchType.LAZY)
+    private List<MerchantAcquirerConfig> merchantAcquirerConfigs;
 
     @Column(nullable = false, length = 15)
     private String acquirerName;

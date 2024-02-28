@@ -14,7 +14,7 @@ public class TransactionData implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long transactionDataId;
+    private Long id;
 
     private Double transactionValue;
     private String cardLastNumber;

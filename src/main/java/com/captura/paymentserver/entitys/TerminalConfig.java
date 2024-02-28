@@ -18,7 +18,7 @@ public class TerminalConfig implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long terminalConfigId;
+    private Long id;
 
     @OneToOne
     @JoinColumn(name = "merchant_config_id")

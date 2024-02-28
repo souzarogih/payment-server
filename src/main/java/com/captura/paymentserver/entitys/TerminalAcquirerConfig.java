@@ -14,7 +14,7 @@ public class TerminalAcquirerConfig implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long terminalAcquirerConfigId;
+    private Long id;
 
     private String tid;
 
